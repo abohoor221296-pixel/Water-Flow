@@ -3,85 +3,83 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="الإعدادات" Loaded="Page_Loaded"
       Background="White">
-    <Grid Padding="20">
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <StackPanel>
-                <TextBlock Text="الإعدادات والتخصيص" FontSize="20" FontWeight="Bold" Margin="0,0,0,20" Foreground="#2C3E50"/>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="20">
+        <StackPanel>
+            <TextBlock Text="الإعدادات والتخصيص" FontSize="20" FontWeight="Bold" Margin="0,0,0,20" Foreground="#2C3E50"/>
 
-                <!-- معلومات الشركة -->
-                <TextBlock Text="معلومات الشركة" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" Foreground="#2C3E50"/>
-                <Grid Margin="0,0,0,20">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+            <!-- معلومات الشركة -->
+            <TextBlock Text="معلومات الشركة" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" Foreground="#2C3E50"/>
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Column="0" Grid.Row="0" Text="اسم الشركة:" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="#2C3E50"/>
-                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="TxtCompanyName" Padding="10" Margin="0,0,0,10"
-                             Foreground="#2C3E50" Background="#ecf0f1" Opacity="0.9"/>
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="اسم الشركة:" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="#2C3E50"/>
+                <TextBox Grid.Column="1" Grid.Row="0" x:Name="TxtCompanyName" Padding="10" Margin="0,0,0,10"
+                         Foreground="#2C3E50" Background="#ecf0f1" Opacity="0.9"/>
 
-                    <TextBlock Grid.Column="0" Grid.Row="1" Text="البريد الإلكتروني:" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="#2C3E50"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="TxtCompanyEmail" Padding="10"
-                             Foreground="#2C3E50" Background="#ecf0f1" Opacity="0.9"/>
-                </Grid>
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="البريد الإلكتروني:" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="#2C3E50"/>
+                <TextBox Grid.Column="1" Grid.Row="1" x:Name="TxtCompanyEmail" Padding="10"
+                         Foreground="#2C3E50" Background="#ecf0f1" Opacity="0.9"/>
+            </Grid>
 
-                <!-- ربط Excel -->
-                <TextBlock Text="ربط Excel" FontSize="16" FontWeight="Bold" Margin="0,20,0,10" Foreground="#2C3E50"/>
-                <Grid Margin="0,0,0,20">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="100"/>
-                    </Grid.ColumnDefinitions>
+            <!-- ربط Excel -->
+            <TextBlock Text="ربط Excel" FontSize="16" FontWeight="Bold" Margin="0,20,0,10" Foreground="#2C3E50"/>
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="0" Text="مسار الملف:" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="#2C3E50"/>
-                    <TextBox Grid.Column="1" x:Name="TxtExcelPath" Padding="10" IsReadOnly="True" Margin="0,0,10,0"
-                             Foreground="#2C3E50" Background="#ecf0f1" Opacity="0.9"/>
-                    <Border Grid.Column="2" Background="#3498db" CornerRadius="3">
-                        <Button Content="استعرض" Click="BtnBrowseExcel_Click"
-                                Background="Transparent" Foreground="White" FontWeight="Bold" BorderThickness="0"/>
-                    </Border>
-                </Grid>
+                <TextBlock Grid.Column="0" Text="مسار الملف:" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="#2C3E50"/>
+                <TextBox Grid.Column="1" x:Name="TxtExcelPath" Padding="10" IsReadOnly="True" Margin="0,0,10,0"
+                         Foreground="#2C3E50" Background="#ecf0f1" Opacity="0.9"/>
+                <Border Grid.Column="2" Background="#3498db" CornerRadius="3">
+                    <Button Content="استعرض" Click="BtnBrowseExcel_Click"
+                            Background="Transparent" Foreground="White" FontWeight="Bold" BorderThickness="0" Padding="10"/>
+                </Border>
+            </Grid>
 
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
-                    <Border Background="#27ae60" CornerRadius="3" Padding="0" Margin="0,0,10,0">
-                        <Button Content="🔄 مزامنة الآن" Click="BtnSyncExcel_Click"
-                                Background="Transparent" Foreground="White" Padding="10" FontWeight="Bold" BorderThickness="0"/>
-                    </Border>
-                    <CheckBox Content="مزامنة تلقائية يومية" VerticalAlignment="Center" Foreground="#2C3E50"/>
-                </StackPanel>
-
-                <!-- الإعدادات العامة -->
-                <TextBlock Text="الإعدادات العامة" FontSize="16" FontWeight="Bold" Margin="0,20,0,10" Foreground="#2C3E50"/>
-                <Grid Margin="0,0,0,20">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock Grid.Column="0" Text="اللغة:" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="#2C3E50"/>
-                    <ComboBox Grid.Column="1" Padding="10" Background="#ecf0f1" Opacity="0.9">
-                        <ComboBoxItem IsSelected="True">العربية</ComboBoxItem>
-                        <ComboBoxItem>English</ComboBoxItem>
-                    </ComboBox>
-                </Grid>
-
-                <!-- أزرار التحكم -->
-                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                    <Border Background="#27ae60" CornerRadius="3" Padding="0" Margin="0,0,10,0">
-                        <Button Content="💾 حفظ" Click="BtnSaveSettings_Click"
-                                Background="Transparent" Foreground="White" Padding="15,10" FontWeight="Bold" BorderThickness="0"/>
-                    </Border>
-                    <Border Background="#95a5a6" CornerRadius="3" Padding="0">
-                        <Button Content="❌ إلغاء"
-                                Background="Transparent" Foreground="White" Padding="15,10" FontWeight="Bold" BorderThickness="0"/>
-                    </Border>
-                </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <Border Background="#27ae60" CornerRadius="3" Margin="0,0,10,0">
+                    <Button Content="🔄 مزامنة الآن" Click="BtnSyncExcel_Click"
+                            Background="Transparent" Foreground="White" Padding="10" FontWeight="Bold" BorderThickness="0"/>
+                </Border>
+                <CheckBox Content="مزامنة تلقائية يومية" VerticalAlignment="Center" Foreground="#2C3E50"/>
             </StackPanel>
-        </ScrollViewer>
-    </Grid>
+
+            <!-- الإعدادات العامة -->
+            <TextBlock Text="الإعدادات العامة" FontSize="16" FontWeight="Bold" Margin="0,20,0,10" Foreground="#2C3E50"/>
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="اللغة:" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="#2C3E50"/>
+                <ComboBox Grid.Column="1" Padding="10" Background="#ecf0f1" Opacity="0.9">
+                    <ComboBoxItem IsSelected="True">العربية</ComboBoxItem>
+                    <ComboBoxItem>English</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+
+            <!-- أزرار التحكم -->
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <Border Background="#27ae60" CornerRadius="3" Margin="0,0,10,0">
+                    <Button Content="💾 حفظ" Click="BtnSaveSettings_Click"
+                            Background="Transparent" Foreground="White" Padding="15,10" FontWeight="Bold" BorderThickness="0"/>
+                </Border>
+                <Border Background="#95a5a6" CornerRadius="3">
+                    <Button Content="❌ إلغاء"
+                            Background="Transparent" Foreground="White" Padding="15,10" FontWeight="Bold" BorderThickness="0"/>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
 </Page>
