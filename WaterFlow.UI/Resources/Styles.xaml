@@ -10,6 +10,18 @@
         <Setter Property="Margin" Value="0,5"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                            CornerRadius="3" 
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="#2c3e50"/>
@@ -28,13 +40,12 @@
         <Setter Property="FontSize" Value="12"/>
     </Style>
 
-    <!-- أسلوب الزر -->
+    <!-- أسلوب الزر العام -->
     <Style TargetType="Button">
         <Setter Property="Padding" Value="10,8"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="BorderRadius" Value="3"/>
     </Style>
 
 </ResourceDictionary>
